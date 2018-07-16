@@ -8,8 +8,11 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(methodOverride('_method'));
 
 const authorsController = require('./controllers/authors.js');
+const articlesController = require('./controllers/articles.js');
+
 
 app.use('/authors', authorsController)
+app.use('/articles', articlesController)
 
 
 
