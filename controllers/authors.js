@@ -21,6 +21,25 @@ router.get('/new', (req, res) => {
   res.render('authors/new.ejs')
 })
 
+
+
+//=================================================
+// Show Route
+router.get('/:id', (req, res) => {
+
+  // Render is when you want to send
+  // an ejs template to the client
+  Author.findById(req.params.id, (err, foundAuthor) => {
+      res.render('authors/show.ejs', {
+      author: foundAuthor// This creates
+      // a "author" variable in the show page
+    });
+  })
+
+});
+
+//=========================================
+
 router.post('/', (req, res) => {
   console.log(req.body)
 
