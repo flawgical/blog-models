@@ -2,10 +2,20 @@ const express = require('express');
 const router = express.Router();
 const Author = require('../models/authors')
 
+//show all authors created in author index
+//=======================================================
 router.get('/', (req, res) => {
-  res.render('authors/index.ejs')
+  Author.find({}, (err, foundAuthors) => {
+
+
+    res.render('authors/index.ejs', {
+      authors: foundAuthors
+    })
+  })
+
 })
 
+//=======================================================
 
 router.get('/new', (req, res) => {
   res.render('authors/new.ejs')
