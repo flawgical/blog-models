@@ -21,8 +21,19 @@
     <h2>Author Attributes</h2>
     <ul>
       <li>Name: <%=author.name%></li>
+
     </ul>
+
   </section>
+  <section>
+  <form method="POST" action="/authors/<%=author.id%>?_method=DELETE">
+  <button type="submit">Delete Author</button>
+  </form>
+</section>
+
+<section>
+  <a href="/authors/<%=author.id%>/edit">Edit</a>
+</section>
 </main>
 
 
